@@ -19,26 +19,7 @@
 
         </Style>
     </Control.Resources>
-    <Grid Background="LightBlue">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <Button Grid.Row="1" Grid.ColumnSpan="5" Command="{Binding Zaloguj}" Content="ZALOGUJ"  />
-        <Button Grid.Row="2" Grid.ColumnSpan="5" Command="{Binding Zarejestruj}" Content="ZAREJESTRUJ"  />
-        <Image Grid.Row="0" Grid.Column="1"  Height="150" VerticalAlignment="Center" Width="150" Source="apartment-icon-24354.png" />
-        <TextBlock Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Center"  TextWrapping="WrapWithOverflow" Text="INTELIGENTNY POŚREDNIK NIERUCHOMOŚCI" VerticalAlignment="Center" FontSize="21" Width="240" FontWeight="Bold" FontFamily="Constantia"/>
+    <Frame x:Name="MainFrame"/>
 
 
-
-    </Grid>
 </Window>
