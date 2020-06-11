@@ -95,13 +95,15 @@ namespace InteligentnyPosrednikNieruchomosci
 
         private void DodajOfeteMethod()
         {
-            new AlertWindow("Nie zaimplementowano metody.").Show();
             
+            _navigationService.Navigate(new DodajOferteView(_navigationService, Zalogowany));
+
         }
 
         private void WyszukajMethod()
         {
-            
+            new AlertWindow("Nie zaimplementowano metody.").Show();
+
         }
 
         private void CofnijMethod()

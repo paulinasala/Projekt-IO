@@ -13,16 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InteligentnyPosrednikNieruchomosci.Views
+namespace InteligentnyPosrednikNieruchomosci
 {
     /// <summary>
-    /// Logika interakcji dla klasy WyszukajView.xaml
+    /// Logika interakcji dla klasy DodajOferteView.xaml
     /// </summary>
-    public partial class WyszukajView : Page
+    public partial class DodajOferteView : Page
     {
-        public WyszukajView()
+        public DodajOferteView(NavigationService navigationService,Klient k)
         {
             InitializeComponent();
+            DataContext = new DodajOferteViewModel(navigationService, k);
         }
     }
 }

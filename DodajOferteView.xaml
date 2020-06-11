@@ -1,0 +1,61 @@
+﻿<Page x:Class="InteligentnyPosrednikNieruchomosci.DodajOferteView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:InteligentnyPosrednikNieruchomosci"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DodajOferteView">
+
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+           
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1" Content="dzielnica:" FontSize="20"  VerticalAlignment="Top" />
+        <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1" Content="adres:" FontSize="20" VerticalAlignment="Top"  />
+        <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1" Content="metraż:" FontSize="20"  VerticalAlignment="Top"/>
+        <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1" Content="pokoje:" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <Label Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" Content="piętro:" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <Label Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Content="cena:" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <Label Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1" Content="obiekty:" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <Label Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Content="opis:" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Grid.RowSpan="2" Grid.Row="0" Grid.ColumnSpan="5" Content="DODAWANIE OFERTY" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <ComboBox Grid.Column="1" Padding="5,6,5,0" Grid.Row="2" Text="{Binding Dzielnica}" Grid.ColumnSpan="3"  HorizontalAlignment="left" Height="30"  VerticalAlignment="Top" Width="200" >
+            <ComboBoxItem IsSelected="True">centrum</ComboBoxItem>
+            <ComboBoxItem >mierzyn</ComboBoxItem>
+            <ComboBoxItem>pogodno</ComboBoxItem>
+            <ComboBoxItem>bezrzecze</ComboBoxItem>
+        </ComboBox>
+            <TextBox Grid.Column="1" Padding="5,6,5,0" Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding LiczbaPomieszczen}"   HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Grid.Column="1" Padding="5,6,5,0" Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding Adres}"   HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Grid.Column="1" Padding="5,6,5,0" Grid.Row="5" Grid.ColumnSpan="2" Text="{Binding Metraz}"   HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Grid.Column="4"  Padding="5,6,5,0" Grid.Row="2" Grid.ColumnSpan="2"  Text="{Binding Pietro}"  HorizontalAlignment="left" Height="30"  TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Grid.Column="4" Padding="5,6,5,0" Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Cena}"   HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Grid.Column="4" Padding="5,6,5,0" Grid.Row="4" Grid.ColumnSpan="2"  Text="{Binding Obiekty}"  HorizontalAlignment="left" Height="30"  TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Grid.Column="4" Padding="5,6,5,0" Grid.Row="5" Grid.ColumnSpan="2"  Text="{Binding Opis}"  HorizontalAlignment="left" Height="30"  TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="6" Command="{Binding DodajOferte}" Content="dodaj" VerticalAlignment="Top" Width="110" Height="50" Background="SteelBlue" FontWeight="ExtraBold" FontSize="18" />
+        <Button Grid.Row="6" Grid.ColumnSpan="1" Grid.Column="6" Command="{Binding Cofnij}" Content="cofnij" VerticalAlignment="Bottom" Width="110" Height="50" Background="SteelBlue" FontWeight="ExtraBold" FontSize="17" />
+        <TextBlock Text="{Binding OfertaView}"/>
+        
+
+
+
+    </Grid>
+</Page>

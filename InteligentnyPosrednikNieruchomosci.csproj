@@ -114,6 +114,10 @@
     <Compile Include="AlertWindowViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="DodajOferteView.xaml.cs">
+      <DependentUpon>DodajOferteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DodajOferteViewModel.cs" />
     <Compile Include="Klient.cs" />
     <Compile Include="LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -137,10 +141,11 @@
     <Compile Include="Views\StartView.xaml.cs">
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WyszukajView.xaml.cs">
-      <DependentUpon>WyszukajView.xaml</DependentUpon>
-    </Compile>
     <Page Include="AlertWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajOferteView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,10 +178,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StartView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\WyszukajView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
