@@ -1,63 +1,35 @@
 ﻿using InteligentnyPosrednikNieruchomosci.Views;
-using System.Windows;
-using System.Data.Common;
-using System.Configuration;
 using MySql.Data.MySqlClient;
-using System;
+using System.Data.Common;
+using System.Windows;
 
 namespace InteligentnyPosrednikNieruchomosci
 {
 
     public partial class MainWindow : Window
     {
-        public MySqlConnection Connection { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
 
-            string provider = ConfigurationManager.AppSettings["provider"];
-            string connectionString = ConfigurationManager.AppSettings["connectionString"];
-            DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
-
-            using (DbConnection connection = factory.CreateConnection())
+            using (DbConnection connection = MySqlClientFactory.Instance.CreateConnection())
             {
-                
-                if (connection == null)
-                {
-                    Console.WriteLine("Connection Error");
-                    Console.ReadLine();
-                    return;
-                }
+                var str = "Data Source=posrednik.czgecepfvj6q.eu-central-1.rds.amazonaws.com;Initial Catalog=posrednik_nieruchomosci;User ID=admin; Password=projektio20;";
 
-                connection.ConnectionString = connectionString;
+                connection.ConnectionString = str;
                 connection.Open();
-                DbCommand command = factory.CreateCommand();
-
-                if (command == null)
-                {
-                    Console.WriteLine("Command Error");
-                    Console.ReadLine();
-                    return;
-                }
-
-
-
-
+                DbCommand command = connection.CreateCommand();
+                command.CommandText = "Select * FROM oferta";
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
-                    // Advance to the next results
                     while (dataReader.Read())
                     {
-                        // Output results using row names
-                        Console.WriteLine($"{dataReader["ProdId"]} " +
-                            $"{dataReader["Product"]}");
+                        var a = dataReader["id_klienta"];
+                        var dzielnica = dataReader["dzielnica"];
                     }
                 }
-
             }
-
 
             var navigationService = MainFrame.NavigationService;
             navigationService.Navigate(new StartView(navigationService));

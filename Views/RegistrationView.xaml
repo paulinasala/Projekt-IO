@@ -29,15 +29,16 @@
         <Label Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" Content="imię" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
         <Label Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" Content="nazwisko:" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Bottom"/>
         <Label Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Content="telefon:" FontSize="20" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-        <Label Grid.Column="1" Grid.ColumnSpan="5" Content="REJESTRACJA" FontSize="35" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox Padding="5,6,5,0" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0" HorizontalAlignment="center" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" />
+        <Label Grid.Column="1" Grid.RowSpan="2" Grid.Row="0" Grid.ColumnSpan="5" Content="REJESTRACJA" FontSize="35" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Padding="5,6,5,0" Grid.Row="2" Text="{Binding LoginText}" Grid.ColumnSpan="3" Grid.Column="0" HorizontalAlignment="center" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" />
         <PasswordBox Padding="5,6,5,0" PasswordChar="*" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0" HorizontalAlignment="center" Height="30" VerticalAlignment="Bottom" Width="200"/>
-        <TextBox Padding="5,6,5,0" Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="0" HorizontalAlignment="center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="200"/>
-        <TextBox Padding="5,6,5,0" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="4" HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-        <TextBox Padding="5,6,5,0" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="4" HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="200"/>
-        <TextBox Padding="5,6,5,0" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="4" HorizontalAlignment="left" Height="30"  TextWrapping="Wrap" VerticalAlignment="Center" Width="200"/>
+        <TextBox Padding="5,6,5,0" Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding EmailText}"  Grid.Column="0" HorizontalAlignment="center" Height="30" TextWrapping="Wrap" VerticalAlignment="Center" Width="200"/>
+        <TextBox Padding="5,6,5,0" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding NameText}"  Grid.Column="4" HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Padding="5,6,5,0" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding SurnameText}"  Grid.Column="4" HorizontalAlignment="left" Height="30" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="200"/>
+        <TextBox Padding="5,6,5,0" Grid.Row="3" Grid.ColumnSpan="2"  Text="{Binding PhoneText}" Grid.Column="4" HorizontalAlignment="left" Height="30"  TextWrapping="Wrap" VerticalAlignment="Center" Width="200"/>
         <Button Grid.Row="3" Grid.ColumnSpan="1" Grid.Column="6" Command="{Binding Rejestracja}" Content="zarejestruj" VerticalAlignment="Top" Width="110" Height="50" Background="SteelBlue" FontWeight="ExtraBold" FontSize="18" />
-        <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="6" Command="{Binding Cofnij}" Content="Cofnij" VerticalAlignment="Bottom" Width="110" Height="50" Background="SteelBlue" FontWeight="ExtraBold" FontSize="17" />
+        <Button Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="6" Command="{Binding Cofnij}" Content="cofnij" VerticalAlignment="Bottom" Width="110" Height="50" Background="SteelBlue" FontWeight="ExtraBold" FontSize="17" />
+        <TextBlock Text="{Binding OfertaView}"/>
 
 
 
