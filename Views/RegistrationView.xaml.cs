@@ -23,7 +23,7 @@ namespace InteligentnyPosrednikNieruchomosci.Views
         public RegistrationView(NavigationService _navigationService)
         {
             InitializeComponent();
-            DataContext = new RegistrationViewModel(_navigationService);
+            DataContext = new RegistrationViewModel(_navigationService, passwordInput);
         }
     }
 }

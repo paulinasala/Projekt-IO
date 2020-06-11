@@ -18,25 +18,34 @@ namespace InteligentnyPosrednikNieruchomosci.Views
         public ICommand Cofnij { get; set; }
         public string OfertaView { get; set; }
         public string LoginText{ get; set; }
-        public string PasswordText { get; set; }
         public string EmailText { get; set; }
         public string NameText { get; set; }
         public string SurnameText { get; set; }
         public string PhoneText { get; set; }
 
-        public RegistrationViewModel(NavigationService navigationService)
+        private System.Windows.Controls.PasswordBox Pass { get; set; }
+        private string PasswordText => Pass.Password;
+
+        public RegistrationViewModel(NavigationService navigationService, System.Windows.Controls.PasswordBox passwordInput)
         {
             _navigationService = navigationService;
             Rejestracja = new RelayCommand(RejestracjaMethod);
             Cofnij = new RelayCommand(CofnijMethod);
-         
+            Pass = passwordInput;
+
+
         }
 
         private void RejestracjaMethod()
         {
-            if (string.IsNullOrEmpty(LoginText)  || string.IsNullOrEmpty(EmailText) || string.IsNullOrEmpty(NameText) || string.IsNullOrEmpty(SurnameText) || string.IsNullOrEmpty(PhoneText))
+            if (string.IsNullOrEmpty(LoginText) || string.IsNullOrEmpty(PasswordText) || string.IsNullOrEmpty(EmailText) || string.IsNullOrEmpty(NameText) || string.IsNullOrEmpty(SurnameText) || string.IsNullOrEmpty(PhoneText))
             {
                 new AlertWindow("Wypełnij wszystkie pola!").Show();
+                return;
+            }
+            if (PasswordText.Length < 6)
+            {
+                new AlertWindow("Hasło musi mieć min. 6 znaków!").Show();
                 return;
             }
             using (DbConnection connection = MySqlClientFactory.Instance.CreateConnection())
@@ -63,8 +72,10 @@ namespace InteligentnyPosrednikNieruchomosci.Views
                     new AlertWindow("Login jest już zajęty").Show();
                     return;
                 }
-                command.CommandText = $"INSERT INTO klient VALUES(null,\"{LoginText}\",\"haslo\",\"{NameText}\",\"{EmailText}\",\"{SurnameText}\",\"{PhoneText}\")";
+                command.CommandText = $"INSERT INTO klient VALUES(null,\"{LoginText}\",\"{PasswordText}\",\"{NameText}\",\"{EmailText}\",\"{SurnameText}\",\"{PhoneText}\")";
                 command.ExecuteNonQuery();
+                new AlertWindow("Konto zostało utworzone").Show();
+                _navigationService.GoBack();
 
             }
         }
