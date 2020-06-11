@@ -19,7 +19,7 @@
 
         </Style>
     </Control.Resources>
-    <Frame x:Name="MainFrame"/>
+    <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
 
 
 </Window>

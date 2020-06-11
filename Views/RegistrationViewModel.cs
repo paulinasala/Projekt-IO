@@ -83,7 +83,6 @@ namespace InteligentnyPosrednikNieruchomosci.Views
 
         private void CofnijMethod()
         {
-            //MySqlConnection connection = new MySqlConnection(connectionString)
             _navigationService.GoBack();
         }
 

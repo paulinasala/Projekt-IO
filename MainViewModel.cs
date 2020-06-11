@@ -20,6 +20,7 @@ namespace InteligentnyPosrednikNieruchomosci
         {
             _navigationService = ns;
             Zarejestruj = new RelayCommand(ZarejestrujMethod);
+            Zaloguj = new RelayCommand(ZalogujMethod);
         }
 
         private void ZarejestrujMethod()
@@ -29,7 +30,7 @@ namespace InteligentnyPosrednikNieruchomosci
 
         void ZalogujMethod()
         {
-
+            _navigationService.Navigate(new LoginView(_navigationService));
         }
        
     }
