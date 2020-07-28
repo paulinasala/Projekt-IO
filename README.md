@@ -13,12 +13,12 @@ Projekt: zakończony
 
 # Zrzuty ekranu:
 <p align="left">
-  <img src="Projekt-IO/glowna.jpg">
+  <img src="Projekt-IO/glowna.png">
 </p>
 <p align="center">
-  <img src="Projekt-IO/dodawanie.jpg">
+  <img src="Projekt-IO/dodawanie.png">
 </p>
 <p align="right">
-  <img src="Projekt-IO/panel.jpg">
+  <img src="Projekt-IO/panel.png">
 </p>
 
