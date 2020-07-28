@@ -12,13 +12,8 @@ Inteligentny pośrednik nieruchomości- prosta aplikacja WPF realizująca wybran
 Projekt: zakończony
 
 # Zrzuty ekranu:
-<p align="left">
-  <img src="Projekt-IO/glowna.png">
-</p>
-<p align="center">
-  <img src="Projekt-IO/dodawanie.png">
-</p>
-<p align="right">
-  <img src="Projekt-IO/panel.png">
-</p>
+<div align="center">
+    <img src="glowna.jpg" width="400px"</img> 
+</div>
+
 
